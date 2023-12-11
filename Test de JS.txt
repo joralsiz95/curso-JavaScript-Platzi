@@ -1,0 +1,192 @@
+Variables y operaciones
+
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+* ¿Qué es una variable y para qué sirve?: Es un espacio reservado en memoria la cual nos sirve para almacenar diferentes tipos de información.
+* ¿Cuál es la diferencia entre declarar e inicializar una variable?: Al declarar una variable solo le estamos asignando el nombre de la variable, mientras que inicializar la varible es asignarle un valor a esa variable ya se de tipo númerica, nombre o de forma booleana.
+* ¿Cuál es la diferencia entre sumar números y concatenar strings?: si vamos a sumar dos o más números esto lo que hara es que el valor de la variable final donde almacenaremos esa suma incremente, por ejemplo suma = numero1 + numero2, numero1 = 2 y numero2 = 7 esto quiere decir que suma = 9, mientras que si concatenamos 2 string que tiene un número almacenado cada uno lo que hace es unirlos, por ejemplo, String1 = "4" y String2 = "6", al concatenar estos dos String nos quedaria 46
+* ¿Cuál operador me permite sumar o concatenar?: El operador que nos permite sumar o concatenar es el de la suma +
+
+2️⃣ Determina el nombre y tipo de dato para almacenar en variables la siguiente información:
+* Nombre: String
+* Apellido: String
+* Nombre de usuario en Platzi: String
+* Edad: Int
+* Correo electrónico: String
+* Mayor de edad: Boolean
+* Dinero ahorrado: Double
+* Deudas: Double
+
+3️⃣ Traduce a código JavaScript las variables del ejemplo anterior y deja tu código en los comentarios.
+let nombre = "Jorge"
+let apellido = "Silva"
+let usuarioPlatzi = "joralsiz95"
+let edad = 27
+let email= nomelose@gmail.com
+let mayorEdad = true
+let dineroAhorrado = 20000.00
+let deudas = 30000.00
+
+4️⃣ Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior:
+* Nombre completo (nombre y apellido) = console.log("Mi nombre es: " + nombre + " " + apellido);
+* Dinero real (dinero ahorrado menos deudas) = console.log("Mi dinero real es: " dineroAhorrado - deudas);
+
+Funciones
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+* ¿Qué es una función?: Es un bloque de codigo que tiene como objetivo realizar una tarea especifica y que puede ser ejecutada o invocada desde otra parte del codigo.
+* ¿Cuándo me sirve usar una función en mi código?: Cuando necesitamos reutilizar codigo, en vez de escribir codigo para realizar una tarea en especifico, creamos una función y la invocamos cada vez que la necesitemos.
+* ¿Cuál es la diferencia entre parámetros y argumentos de una función?: Los paramatro son las variables que recibe una funcion y los argumentos son los valores que se envian a la función al momento de invocar dicha función.
+
+
+2️⃣ Convierte el siguiente código en una función, pero, cambiando cuando sea necesario las variables constantes por parámetros y argumentos en una función:
+const name = "Juan David";
+const lastname = "Castro Gallego";
+const completeName = name + lastname;
+const nickname = "juandc";
+
+console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+
+funtion presentar(completeName, nickname){
+	return ("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+}
+
+
+Condicionales
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+¿Qué es un condicional?: Una condición es una sentencia que si se cumple ejecutara ciertas tareas en el codigo.
+¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?: Existen 4 condicionales esta el if que ejecuta un bloque de codigo si la condición establecida se cumple, esta el else, que se ejecuta cuando no se cumple la condición del if, esta el else if, que es cuando se van a agregar multiples condiciones y esta el switch, que se ejecuta cuando necesitamos que se ejecute una sola condición.
+¿Puedo combinar funciones y condicionales?: Si se puede.
+
+const tipoDeSuscripcion = "Basic";
+
+switch (tipoDeSuscripcion) {
+   case "Free":
+       console.log("Solo puedes tomar los cursos gratis");
+       break;
+   case "Basic":
+       console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+       break;
+   case "Expert":
+       console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+       break;
+   case "ExpertPlus":
+       console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+       break;
+}
+
+if (tipoDeSuscripcion == "Free"){
+    return console.log("Solo puedes tomar los cursos gratis");
+}else if (tipoDeSuscripcion == "Basic"){
+    return console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+}else if (tipoDeSuscripcion == "Expert"){
+    return console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+}else if (tipoDeSuscripcion == "ExpertPlus"){
+    return console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+}else{
+    return console.log("No tienes una suscripción válida");
+}
+
+3️⃣ Replica el comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
+💡 Bonus: si ya eres una experta o experto en el lenguaje, te desafío a comentar cómo replicar este comportamiento con arrays u objetos y un solo condicional. 😏
+
+let tipoDeSuscripcion = ["Free", "Basic", "Expert", "ExpertPlus"];
+let infoSuscripcion = [ "solo puedes tomar los cursos gratis", "puedes tomar casi todos los cursos de Platzi durante un mes",  "puedes tomar casi todos los cursos de Platzi durante un año", "tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año"];
+let usuarioSuscripcion = "free";
+for (let i=0; i < tipoDeSuscripcion.length; i++) {
+    if (usuarioSuscripcion == tipoDeSuscripcion[i]) {
+        console.log("Si estas suscrito al plan " + tipoDeSuscripcion[i] + "en el cual" + infoSuscripcion[i]);
+    }
+}
+
+
+Ciclos
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+¿Qué es un ciclo?: Es un evento que ejecutara una tarea en especifico las veces que sea necesaria hasta que se cumpla la condición de salida de que declaramos.
+¿Qué tipos de ciclos existen en JavaScript?: Exite el ciclo For y While.
+¿Qué es un ciclo infinito y por qué es un problema?: Un clico infinito, es un ciclo en el cual nunca se cumple la condición de salida que declaramos y es un problema porque siempre se quedara ejecutando el ciclo y no se ejecutara el resto del codigo.
+¿Puedo mezclar ciclos y condicionales?: Si se puede.
+
+2️⃣ Replica el comportamiento de los siguientes ciclos for utilizando ciclos while:
+for (let i = 0; i < 5; i++) {
+    console.log("El valor de i es: " + i);
+}
+
+for (let i = 10; i >= 2; i--) {
+    console.log("El valor de i es: " + i);
+}
+
+let i = 0;
+while(i < 5){
+    console.log("El valor de i es: " + i);
+    i++;
+}
+
+let i = 10;
+while (i >= 2){
+    console.log("El valor de i es: " + i);
+    i--;
+}
+
+3️⃣ Escribe un código en JavaScript que le pregunte a los usuarios cuánto es 2 + 2. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.
+💡 Pista: puedes usar la función prompt de JavaScript.
+
+let respuestaUsuario;
+
+while (true) {
+    respuestaUsuario = parseInt(prompt("Cuánto es 2 + 2?"), 10);
+
+    if (!isNaN(respuestaUsuario) && respuestaUsuario === 4) {
+        alert("¡Felicidades! La respuesta es correcta.");
+        break;
+    } else {
+        alert("La respuesta es incorrecta. Por favor, inténtalo de nuevo.");
+    }
+}
+
+
+Listas
+1️⃣ Responde las siguientes preguntas en la sección de comentarios:
+¿Qué es un array?: Un array es una estructura de datos que almacena una colección de elementos, donde cada elemento cuenta con un indice o una posición unica, estos elementos que se encuentran dentro del array, pueden ser de cualquier tipo.
+¿Qué es un objeto?: Los objetos son la instacia de una clase, que son un prototipo que cuenta con propiedades y metodos definidos.
+¿Cuándo es mejor usar objetos o arrays?: Es mejor usar objetos cuando necesitamos organizar datos de manera estructurada y cada información tiene un nombre descriptivo, y usamos arrays cuando trabajamos con listas ordenadas de elementos y necesitamos acceder a ellos por índice o realizar operaciones iterativas.
+¿Puedo mezclar arrays con objetos o incluso objetos con arrays?: Si.
+
+2️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+let frutas = ["Pera", "Manzana", "Naranja", "Uva"];
+
+function imprimePrimerElem(frutas){
+    console.log(frutas[0]);
+}
+
+imprimePrimerElem(frutas);
+
+3️⃣ Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).
+let frutas = ["Pera", "Manzana", "Naranja", "Uva"];
+
+function imprimePrimerElem(frutas){
+    for (let i = 1; i <= frutas.length; i++){
+        console.log("En la posición "+ i + " esta: " + frutas[i-1]);
+    }
+}
+
+imprimePrimerElem(frutas);
+
+4️⃣ Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo).
+function imprimirElementos(objeto) {
+    if (typeof objeto === 'object' && objeto !== null) {
+      for (let clave in objeto) {
+        if (objeto.hasOwnProperty(clave)) {
+          console.log(clave + ": " + objeto[clave]);
+        }
+      }
+    } else {
+      console.log("El argumento no es un objeto válido.");
+    }
+  }
+  
+let persona = {
+    nombre: "Jorge",
+    edad: 27,
+    ciudad: "Bogotá"
+};
+  
+imprimirElementos(persona);
